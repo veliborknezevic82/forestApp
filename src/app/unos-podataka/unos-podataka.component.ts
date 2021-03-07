@@ -5,9 +5,27 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './unos-podataka.component.html',
   styleUrls: ['./unos-podataka.component.css']
 })
-export class UnosPodatakaComponent implements OnInit {
+export class UnosPodatakaComponent {
+  
 
-   nadmorskaVisina:number;
+   norme = {usloviRada1:{bonitet1: {prvaNorma:"1", drugaNorma:"2"},
+                          bonitet2: {prvaNorma:"3", drugaNorma:"4"},
+                          bonitet3: {prvaNorma:"5", drugaNorma:"6"},
+                          bonitet4: {prvaNorma:"7", drugaNorma:"8"}
+                        },
+            usloviRada2:{bonitet1: {prvaNorma:"1", drugaNorma:"2"},
+                          bonitet2: {prvaNorma:"3", drugaNorma:"4"},
+                          bonitet3: {prvaNorma:"5", drugaNorma:"6"},
+                          bonitet4: {prvaNorma:"7", drugaNorma:"8"}
+                        },
+            usloviRada3:{bonitet1: {prvaNorma:"1", drugaNorma:"2"},
+                          bonitet2: {prvaNorma:"3", drugaNorma:"4"},
+                          bonitet3: {prvaNorma:"5", drugaNorma:"6"},
+                          bonitet4: {prvaNorma:"7", drugaNorma:"8"}
+                        },  
+            }
+
+   nadmorskaVisina: number;
    srednjiPrecnikCetinara: number;
 
    onChangeValue1(event){
@@ -16,10 +34,13 @@ export class UnosPodatakaComponent implements OnInit {
    onChangeValue2(event){
       this.srednjiPrecnikCetinara = event.target.value;
      }
+   izracunajNorme (){
+     console.log(this.norme.usloviRada3.bonitet1.prvaNorma);
+     
+   }
 
-  constructor() { }
+ 
 
-  ngOnInit(): void {
-  }
+  
 
 }
